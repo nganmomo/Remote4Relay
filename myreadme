@@ -1,0 +1,55 @@
+me-no-dev/ESPAsyncWebServer
+me-no-dev/ESPAsyncTCP
+marvinroger/async-mqtt-client
+
+GND     GND GND         IO3 RY4
+GND     GND IO15        IO2 RY3
+IO0     5V  IO2         IO4 RY2
+RX0     5V  IO0         IO6 RY1
+TX0     3V3 IO4         EN
+5V      3V3 IO5         ADC
+
+GPIO0: It should be LOW during normal boot.
+GPIO2: It should be HIGH during normal boot.
+GPIO15: Use a pulldown resistor to avoid unexpected behavior.
+
+GPIO4
+GPIO5
+GPIO12  //used
+GPIO13  //used
+GPIO14  //used
+GPIO16  //used
+
+GPIO15 interrup request
+
+avoid reset mis strigger relay
+
+[env:esp12e]
+platform = espressif8266
+board = esp12e
+framework = arduino
+lib_deps = 
+	ottowinter/ESPAsyncWebServer-esphome@^3.1.0
+	ottowinter/AsyncMqttClient-esphome@^0.8.6
+
+
+[env:esp32-c3-m1i-kit]
+platform = espressif32
+board = esp32-c3-m1i-kit
+framework = arduino
+lib_deps = 
+	ottowinter/ESPAsyncWebServer-esphome@^3.1.0
+	ottowinter/AsyncMqttClient-esphome@^0.8.6	
+
+[env:lolin_s2_mini]
+platform = espressif32
+board = lolin_s2_mini
+framework = arduino  
+lib_deps = 
+	ottowinter/ESPAsyncWebServer-esphome@^3.1.0
+	ottowinter/AsyncMqttClient-esphome@^0.8.6	  
+
+martin-ger/uMQTTBroker@^1.0.0
+Port 3300	
+
++factory default
